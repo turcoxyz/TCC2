@@ -1,0 +1,155 @@
+.logo {
+    width: 100px;
+  }
+  
+  .navfundo {
+    background: #49745f;
+  }
+  
+  .navfundo a.navbar-brand,
+  .listaTP > li > a {
+    color: white !important;
+  }
+  
+  .navfundo button.navbar-toggler {
+    border-color: white;
+    background: white;
+  }
+  
+  .btn2 {
+    background-color: white;
+    color: black;
+  }
+  
+  .btn2:hover,
+  .btn2:focus {
+    background-color: black;
+    color: white;
+  }
+
+  .nav-scroller .nav {
+    display: flex;
+    flex-wrap: nowrap;
+    padding-bottom: 1rem;
+    margin-top: -1px;
+    overflow-x: auto;
+    text-align: center;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /*CSS TABELA*/
+
+  body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: linear-gradient(to right, rgb(73, 116, 95), rgb(255, 255, 255));
+}
+
+.box{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 15px;
+    border-radius: 15px;
+    width: 30%;
+    color: white;
+    margin-top: 30%;
+}
+
+fieldset{
+    border: 3px solid #49745f;
+}
+
+legend{
+    border: 1px solid #49745f;
+    padding: 10px;
+    text-align: center;
+    background-color: #49745f;
+    border-radius: 8px;
+}
+
+.inputbox{
+    position: relative;
+}
+
+.InputUser{
+    background: none;
+    border: none;
+    border-bottom: 1px solid white;
+    outline: none;
+    color: white;
+    font-size: 15px;
+    width: 100%;
+    letter-spacing: 3px;
+}
+
+.labelInput {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.InputUser:focus~.labelInput,
+.InputUser:valid~.labelInput {
+    top: -20px;
+    font-size: 12px;
+    color: #49745f;
+}
+
+#data_nascimento{
+    border: none;
+    padding: 8px;
+    border-radius: 10px;
+}
+
+#submit{
+    background-color: #49745f;
+    width: 100%;
+    border: none;
+    padding: 15px ;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+#submit:hover{
+    background-color: #69a789;
+
+}
+
+/*LOGIN*/
+
+#form{
+    
+  background-color: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  padding: 60px;
+  border-radius: 15px;
+  color: white;
+}
+input{
+  padding: 15px;
+  border-radius: none ;
+  outline: none;
+  font-size: 15px;
+}
+
+button{
+  background-color: #49745f;
+  border: none;
+  padding: 15px;
+  width: 100%;
+  border-radius: 10px;
+  color: white;
+  font-size: 15px;
+}
+button:hover{
+  background-color: #69a789;
+}
