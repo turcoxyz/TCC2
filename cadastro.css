@@ -1,49 +1,9 @@
-.logo {
-    width: 100px;
-  }
-  
-  .navfundo {
-    background: #49745f;
-  }
-  
-  .navfundo a.navbar-brand,
-  .listaTP > li > a {
-    color: white !important;
-  }
-  
-  .navfundo button.navbar-toggler {
-    border-color: white;
-    background: white;
-  }
-  
-  .btn2 {
-    background-color: white;
-    color: black;
-  }
-  
-  .btn2:hover,
-  .btn2:focus {
-    background-color: black;
-    color: white;
-  }
 
-  .nav-scroller .nav {
-    display: flex;
-    flex-wrap: nowrap;
-    padding-bottom: 1rem;
-    margin-top: -1px;
-    overflow-x: auto;
-    text-align: center;
-    white-space: nowrap;
-    -webkit-overflow-scrolling: touch;
-  }
+
 
   /*CSS TABELA*/
 
-  body{
-    font-family: Arial, Helvetica, sans-serif;
-    background-image: linear-gradient(to right, rgb(73, 116, 95), rgb(255, 255, 255));
-}
+
 
 .box{
     position: relative;
@@ -82,7 +42,7 @@ legend{
     color: white;
     font-size: 15px;
     width: 100%;
-    letter-spacing: 3px;
+    letter-spacing: 1px;
 }
 
 .labelInput {
@@ -141,7 +101,7 @@ input{
   font-size: 15px;
 }
 
-button{
+.enviar {
   background-color: #49745f;
   border: none;
   padding: 15px;
