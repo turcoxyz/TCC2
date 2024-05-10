@@ -43,15 +43,60 @@
     </nav>
 
 
-    <div id="form">
-        <h1>Login</h1>
-        <input type="text" placeholder="Nome" class="InputUser">
-        <br><br>
-        <input type="password" placeholder="Senha" class="InputUser">
-        <br><br>
-        <button class="enviar">Enviar</button>
-        <br><br>
-        <input type="button" value="não é registrado ainda? Clique aqui para se registrar!" id="registernow">
+    <div class="box">
+        <form action=""></form>
+        <fieldset>
+            <legend><b>Cadastro de Usuario</b></legend>
+            <br><br>
+            <div class="inputbox">
+                <input type="text" name="Nome" class="InputUser" required>
+                <label for="nome" class="labelInput">Nome Completo</label>
+                <br><br>
+                <div class="inputbox">
+                    <input type="text" name="nomeUser" class="InputUser" required>
+                    <label for="nomeUser" class="labelInput">Nome de Usuario</label>
+                <br><br>
+            </div>
+            <div class="inputbox">
+                <input type="text" name="email" class="InputUser" required>
+                <label for="email" class="labelInput">Email</label>
+            </div>
+            <br>
+            <div class="inputbox">
+
+                <input type="tel" name="telefone" class="InputUser" required>
+                <label for="telefone" class="labelInput">(DDD)Telefone</label>
+                <br><br>
+            </div>
+            <p>Gênero</p>
+            <input type="radio" name="genero" id="masculino" value="masculino" required>
+            <label for="masculino">Masculino</label>
+            <br>
+            <input type="radio" name="genero" id="feminino" value="feminino" required>
+            <label for="Feminino">Feminino</label>
+            <br>
+            <input type="radio" name="genero" id="outros" value="outros" required>
+            <label for="outros">Outros</label>
+            <br>
+            <br>
+            <div class="inputbox">
+                <label for="data_nascimento"><b>Data de Nascimento</b></label>
+                <input type="date" name="data_nascimento" id="data_nascimento" required>
+            </div>
+            <br><br>
+            <div class="inputbox">
+                <input type="text" name="bairro" class="InputUser" required>
+                <label for="bairro" class="labelInput">Nome do Bairro</label>
+            </div>
+            <br><br>
+            <div class="inputbox">
+                <input type="text" name="nm_rua" class="InputUser" required>
+                <label for="nm_rua" class="labelInput">Endereço com Número </label>
+            </div>
+            <br><br>
+            <input type="submit" name="submit" id="submit">
+
+        </fieldset>
     </div>
 
 
