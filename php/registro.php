@@ -25,34 +25,24 @@ header('location: login.php');
 <html lang="en">
 
 <head>
-    <script src="/assets/js/color-modes.js"></script>
+<script src="/assets/js/color-modes.js"></script>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.118.2">
-    <title>ZooPet - Cadastro</title>
-    <link rel="icon" href="/img/ZooPet Icone 2.png">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+<meta name="generator" content="Hugo 0.118.2">
+<title>ZooPet</title>
+<link rel="icon" href="/img/ZooPet Icone 2.png">
 
-    <link rel="canonical" href="/https://getbootstrap.com/docs/5.3/examples/blog/">
-
-   
-
-    <link rel="stylesheet" href="/https://cdn.jsdelivr.net/npm/@docsearch/css@3">
-
-    <link href="/https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link href="/https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    
-
-    <!-- Custom styles for this template -->
-    <link href="/https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap" rel="stylesheet">
-    <!-- Custom styles for this template -->
-    <link rel="stylesheet" href="/style.css">
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/style.css">
-
+<link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/blog/">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/cadastro.css">
 </head>
 
 <body>
@@ -67,8 +57,8 @@ header('location: login.php');
             </button>
 
             <form class="form-inline">
-                <button class="btn btn-light" type="button"><a href="#" style="text-decoration: none; color: black;">Entrar</a></button>
-                <button class="btn btn-outline-light" type="button"><a href="/formulario/formulario.html"  style="text-decoration: none; color: inherit !important;">Registrar</a></button>
+                <button class="btn btn-light" type="button"><a href="login.php" style="text-decoration: none; color: black;">Entrar</a></button>
+                <button class="btn btn-outline-light" type="button"><a href="#"  style="text-decoration: none; color: inherit !important;">Registrar</a></button>
             </form>
 
             <!-- <div class="collapse navbar-collapse" id="navbarScroll">
@@ -97,7 +87,6 @@ header('location: login.php');
     <!--TABELA DE CADASTRO--> 
     <div class="box">
         <form action="registro.php" method="POST">
-        <fieldset>
             <legend><b>Cadastro de Usuario</b></legend>
             <br><br>
             <div class="inputbox">
@@ -152,7 +141,6 @@ header('location: login.php');
             <br><br>
             <input type="submit" name="submit" id="submit">
 
-        </fieldset>
         </form>
     </div>
 </body>
