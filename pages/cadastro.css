@@ -1,102 +1,102 @@
-
-
-
-  /*CSS TABELA*/
-
-
-
-.box{
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    background-color: rgba(0, 0, 0, 0.8);
-    padding: 15px;
-    border-radius: 15px;
-    width: 30%;
-    color: white;
-    margin-top: 30%;
+.box {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 15px;
+  border-radius: 15px;
+  width: 30%;
+  color: white;
+  margin-top: 30%;
 }
 
-fieldset{
-    border: 3px solid #49745f;
+fieldset {
+  border: 3px solid #49745f;
 }
 
-legend{
-    border: 1px solid #49745f;
-    padding: 10px;
-    text-align: center;
-    background-color: #49745f;
-    border-radius: 8px;
+legend {
+  border: 1px solid #49745f;
+  padding: 10px;
+  text-align: center;
+  background-color: #49745f;
+  border-radius: 8px;
 }
 
-.inputbox{
-    position: relative;
+.inputbox {
+  position: relative;
 }
 
-.InputUser{
-    background: none;
-    border: none;
-    border-bottom: 1px solid white;
-    outline: none;
-    color: white;
-    font-size: 15px;
-    width: 100%;
-    letter-spacing: 1px;
+.InputUser {
+  background: none;
+  border: none;
+  border-bottom: 1px solid white;
+  outline: none;
+  color: white;
+  font-size: 15px;
+  width: 100%;
+  letter-spacing: 1px;
 }
 
 .labelInput {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    pointer-events: none;
-    transition: .5s;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  pointer-events: none;
+  transition: 0.5s;
 }
 
-.InputUser:focus~.labelInput,
-.InputUser:valid~.labelInput {
-    top: -20px;
-    font-size: 12px;
-    color: #49745f;
+.InputUser:focus ~ .labelInput,
+.InputUser:valid ~ .labelInput {
+  top: -20px;
+  font-size: 12px;
+  color: #49745f;
 }
 
-#data_nascimento{
-    border: none;
-    padding: 8px;
-    border-radius: 10px;
+#data_nascimento {
+  border: none;
+  padding: 8px;
+  border-radius: 10px;
 }
 
-#submit{
-    background-color: #49745f;
-    width: 100%;
-    border: none;
-    padding: 15px ;
-    color: white;
-    font-size: 15px;
-    cursor: pointer;
-    border-radius: 10px;
+#submit {
+  background-color: #49745f;
+  width: 100%;
+  border: none;
+  padding: 15px;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 10px;
 }
-#submit:hover{
-    background-color: #69a789;
-
+#submit:hover {
+  background-color: #69a789;
 }
 
 /*LOGIN*/
 
+.wrap {
+  flex-wrap: wrap;
+}
+
 #form{
-    
-  background-color: rgba(0, 0, 0, 0.8);
+ background-color: rgba(0, 0, 0, 0.8); 
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
-  padding: 60px;
+  transform: translate(-50%, -50%);
+  padding: 5%;
   border-radius: 15px;
   color: white;
+  margin-top: 10%
+
+  /* border: 1px solid #49745f;
+  border-radius: 15px;
+  padding: 100px; */
 }
-input{
+input {
   padding: 15px;
-  border-radius: none ;
+  border-radius: none;
   outline: none;
   font-size: 15px;
 }
@@ -110,6 +110,12 @@ input{
   color: white;
   font-size: 15px;
 }
-button:hover{
+button:hover {
   background-color: #69a789;
+}
+
+.forget{
+  background-color: rgba(0, 0, 0, 0);
+  outline: none;
+  border-radius: none;
 }
