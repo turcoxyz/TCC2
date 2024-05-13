@@ -1,0 +1,134 @@
+
+
+.profile-picture {
+    max-width: 60px;
+    max-height: 60px;
+    border-radius: 50%;
+
+    margin: 14px 14px 1px 14px;
+}
+
+.feed-post {
+    border: 2px solid white;
+    border-radius: 5px;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: row;
+}
+
+.nome-usuario {
+    text-decoration: none;
+    color: inherit;
+    margin: 20px 5px 3px 5px;
+    height: 20px;
+}
+
+.username-at {
+    text-decoration: none;
+    color: lightgray;
+    margin: 20px 10px 3px 5px;
+    height: 20px;
+}
+
+.post-content {
+    border: 2px solid gray;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.post-content-border {
+    margin: 10px;
+}
+
+.content-text {
+    font-size: large;
+}
+
+#content-image {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+
+    border: 2px solid white;
+}
+
+.interaction-buttons {
+    margin: 14px;
+    background-color: rgb(126, 126, 126);
+    border-radius: 10px;
+    display: inline-block;
+    display: flex;
+    flex-direction: row;
+}
+
+#like-button {
+    width: 30px;
+    height: auto;
+    margin: 9px;
+    cursor: pointer;
+}
+
+.row-content {
+    display: flex;
+    flex-direction: row;
+    /* height: 50px; */
+}
+
+.column-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.post-info {
+    height: 700px;
+    column-gap: 4px;
+}
+
+.post-date {
+    margin: 5px 15px 10px 5px;
+    color: rgba(184, 184, 184, 0.8);
+}
+
+.label-adocao {
+    background-color: darkred;
+    color: white;
+    border-radius: 10px;
+    padding: 3px;
+    margin-top: 2px;
+    font-weight: 600 ;
+}
+
+#share-button {
+    width: 30px;
+    height: auto;
+    margin: 9px;
+    cursor: pointer;
+}
+
+.interaction {
+    display: flex;
+    flex-direction: row;
+}
+
+.comentario-box {
+    width: 100%;
+}
+
+.comentario-campo {
+    margin-top: 5px;
+    width: 98.6%;
+    height: 80%;
+    border-radius: 12px;
+    border: 2px solid white;
+}
+
+.label-animal-perdido {
+    background-color: darkgreen;
+    color: white;
+    border-radius: 10px;
+    padding: 3px;
+    margin-top: 2px;
+    font-weight: 600 ;
+}
