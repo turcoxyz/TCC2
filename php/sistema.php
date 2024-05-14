@@ -26,28 +26,27 @@ $logado = $_SESSION['email'];
 <link rel="icon" href="/img/ZooPet Icone 2.png">
 
 <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/blog/">
-<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/pages/style.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/cadastro.css">
+<link rel="stylesheet" href="/pages/cadastro.css">
 </head>
-<body>
-
 <nav class="navbar navbar-expand-lg navbar-light navfundo justify-content-between">
         <div class="container">
-            <a class="navbar-brand" href="home.html"><img class="logo" src="/img/ZooPet Logomarca.png" alt="">ZooPet</a>
+            <a class="navbar-brand" href="home.php"><img class="logo" src="/img/ZooPet Logomarca.png" alt="">ZooPet</a>
 
 
             <form class="form-inline">
                 <a href="sair.php"><button class="btn btn-light" type="button">Sair</button></a>
-            
+                <a href="perfil.php"><button class="btn btn-light" type="button">PERFIL</button></a>
             </form>
 
         </div>
     </nav>
+    <body>
 
     <?php
     echo "<h1>Bem vindo <u>$logado</u><h1>";
