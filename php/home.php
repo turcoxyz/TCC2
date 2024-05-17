@@ -2,7 +2,8 @@
 <html lang="pt-BR" data-bs-theme="auto">
 
 <head>
-    <script src="/assets/js/color-modes.js"></script>
+    
+<script src="/assets/js/color-modes.js"></script>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -54,7 +55,7 @@
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <a href="registro.html"><img class="anuncio" src="/img/slide-cadastro.png" class="d-block w-100"
+                    <a href="registro.php"><img class="anuncio" src="/img/slide-cadastro.png" class="d-block w-100"
                             alt="..."></a>
                 </div>
                 <div class="carousel-item">
