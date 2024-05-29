@@ -1,3 +1,10 @@
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $email = $_POST["email"];
+    $senha = $_POST["senha"];
+
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -24,15 +31,15 @@
 
 <nav class="navbar navbar-expand-lg navbar-light navfundo justify-content-between">
     <div class="container">
-        <a class="navbar-brand" href="/index.html"><img class="logo" src="/img/ZooPet Logomarca.png" alt="">ZooPet</a>
+        <a class="navbar-brand" href="home.php"><img class="logo" src="/img/ZooPet Logomarca.png" alt="">ZooPet</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
             aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
         <form class="form-inline">
-            <a href="login.html"><button class="btn btn-light" type="button">Entrar</button></a>
-            <a href="registro.html"><button class="btn btn-outline-light" type="button">Registrar</button></a>
+            <a href="login.php"><button class="btn btn-light" type="button">Entrar</button></a>
+            <a href="registro.php"><button class="btn btn-outline-light" type="button">Registrar</button></a>
         </form>
 
     </div>
@@ -49,7 +56,9 @@
         <br><br>
         <input type="submit" name="submit" value="Enviar" class="enviar">
 <br><br>
-        <input type="button" value="Esqueceu sua senha? Clique aqui!" class="forget">
+<form class="form-inline">
+            <a href="recuperarsenha.php"><button class="btn btn-light" type="button">Esqueceu sua senha?</button></a>
+        </form>
     </div>
 </form>
 </body>
