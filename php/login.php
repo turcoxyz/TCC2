@@ -2,6 +2,8 @@
 session_start();
 include_once('config.php');
 
+$error_message = "";
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $senha = $_POST['senha'];
@@ -24,10 +26,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             header("Location: home.php");
             exit();
         } else {
-            echo "Email ou senha incorretos!";
+            $error_message = "Email ou senha incorretos!";
         }
     } else {
-        echo "Email ou senha incorretos!";
+        $error_message = "Email ou senha incorretos!";
     }
 
     $stmt->close();
@@ -51,6 +53,16 @@ $conexao->close();
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap" rel="stylesheet">  
     <link rel="stylesheet" href="/pages/cadastro.css">
+    <script>
+        function togglePasswordVisibility() {
+            var passwordField = document.getElementById("senha");
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+            } else {
+                passwordField.type = "password";
+            }
+        }
+    </script>
 </head>
 <!--NAVBAR--> 
 <nav class="navbar navbar-expand-lg navbar-light navfundo justify-content-between">
@@ -71,11 +83,19 @@ $conexao->close();
     <a href="home.php"><button class="btn-voltar">&hookleftarrow; Voltar</button></a>
     <div id="form" style="width: 500px;">
         <h1>Login</h1>
+        
         <form action="login.php" method="POST">
             <input type="text" name="email" placeholder="Email" class="InputUser" required>
             <br><br>
-            <input type="password" name="senha" placeholder="Senha" class="InputUser" required>
+            <input type="password" name="senha" id="senha" placeholder="Senha" class="InputUser" required>
             <br><br>
+            <input type="checkbox" onclick="togglePasswordVisibility()"> Mostrar senha
+            <br><br>
+            <?php if ($error_message): ?>
+                <div class="alert alert-danger" role="alert">
+                    <?php echo $error_message; ?>
+                </div>
+            <?php endif; ?>
             <input type="submit" name="submit" value="Enviar" class="enviar">
             <br><br>
             <form class="form-inline">
@@ -85,3 +105,4 @@ $conexao->close();
     </div>
 </body>
 </html>
+
