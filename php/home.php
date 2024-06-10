@@ -24,6 +24,7 @@ if ($result->num_rows > 0) {
 
 $stmt->close();
 ?>
+
 </html>
 
 <!DOCTYPE html>
@@ -51,51 +52,108 @@ $stmt->close();
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="/css/nightmode.css">
   <link rel="stylesheet" href="/pages/cadastro.css">
+  <link rel="stylesheet" href="../css/nightmode.css">
+  <style>
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 40px;
+      height: 20px;
+    }
 
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
 
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      -webkit-transition: .4s;
+      transition: .4s;
+      border-radius: 20px;
+    }
 
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 16px;
+      width: 16px;
+      left: 2px;
+      bottom: 2px;
+      background-color: white;
+      -webkit-transition: .4s;
+      transition: .4s;
+      border-radius: 50%;
+    }
 
+    input:checked+.slider {
+      background-color: #2196F3;
+    }
+
+    input:checked+.slider:before {
+      -webkit-transform: translateX(20px);
+      -ms-transform: translateX(20px);
+      transform: translateX(20px);
+    }
+
+    .slider.round {
+      border-radius: 20px;
+    }
+
+    .slider.round:before {
+      border-radius: 50%;
+    }
+  </style>
 
 </head>
 
-<nav class="navbar navbar-expand-lg navbar-light navfundo justify-content-between">
+<nav class="navbar navbar-expand-lg navbar-light justify-content-between" style="background: #49745f;">
   <div class="container">
-    <a class="navbar-brand" href="home.php"><img class="logo" src="/img/ZooPet Logomarca.png" alt="">ZooPet</a>
+    <a class="navbar-brand" href="home.php">
+      <img class="logo" src="/img/ZooPet Logomarca.png" alt="ZooPet Logo">
+      ZooPet
+    </a>
 
-    <div>Bem-vindo, <?php echo $user_name; ?>!</div>
-    <form class="d-inline-flex">
+    <div class="d-flex align-items-center text-white">
+      <span class="me-4">Bem-vindo, <?php echo $user_name; ?>!</span>
+
+      <!-- Dropdown menu -->
       <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="settingsDropdown" data-bs-toggle="dropdown" aria-expanded="false">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gear" viewBox="0 0 16 16">
             <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492M5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0" />
             <path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115z" />
           </svg>
         </button>
-        <ul class="dropdown-menu dropdown-menu-dark">
+        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="settingsDropdown">
           <li><a class="dropdown-item" href="../php/perfil.php">Gerenciar Conta</a></li>
-          <li><a class="dropdown-item">Modo Noturno</a>
-            <input type="checkbox" class="checkbox" id="chk" />
-            <label class="label" for="chk">
-              <i class="fas fa-moon"></i>
-              <i class="fas fa-sun"></i>
-              <div class="ball"></div>
-            </label>
-          </li>
-          <li>
-            <hr class="dropdown-divider">
-          </li>
+          <li class="dropdown-item">
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" id="chk">
+              <label class="form-check-label" for="chk">Modo Noturno</label>
+            </div>
+          </li><a class="dropdown-item" href="../php/feed.php">FEED</a></li>
+          <li><hr class="dropdown-divider"></li>
           <li><a class="dropdown-item" href="../pages/suporte.html">FAQ</a></li>
         </ul>
       </div>
 
-      <a href="/php/sair.php"><button class="btn btn-outline-light" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
-            <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z" />
-            <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z" />
-          </svg> SAIR</button></a>
-    </form>
-
+      <!-- Log out button -->
+      <a href="/php/sair.php" class="btn btn-outline-light">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"></path>
+          <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"></path>
+        </svg> Sair
+      </a>
+    </div>
   </div>
 </nav>
 
@@ -345,6 +403,7 @@ $stmt->close();
 </body>
 <script src="../pages/feed.js"></script>
 <script src="../js/java.js"></script>
+
 
 
 </html>
