@@ -1,19 +1,13 @@
 <?php
 
-$dbHost = 'localhost';
-$dbUsername = 'root';
-$dbPassword = 'root';
-$dbName = 'cadastros';
+$servername = "localhost";
+$username = "root";
+$password = "root";
+$dbname = "cadastros";
 
-$conexao = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
+$conexao = new mysqli($servername, $username, $password, $dbname);
 
-//if ($conexao->connect_errno) {
-    //printf("Erro de conexão: %s\n", $conexao->connect_error);
-    //exit();
-//} else {
-    //echo "Conexão estabelecida com sucesso!\n";
-    // Perform some queries or operations on the database here
-    //$conexao->close();
-//}
-
+if ($conexao->connect_error) {
+    die("Connection failed: " . $conexao->connect_error);
+}
 ?>

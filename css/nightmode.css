@@ -55,5 +55,14 @@ body.dark {
 }
 .dropdown-menu dropdown-menu-dark{
   align-items: center;
-  flex-direction: column;
+  flex-direction: column;}
+
+  /* Modo Claro */
+.light-mode {
+  color: #000; /* Cor da fonte no modo claro */
+}
+
+/* Modo Escuro */
+.dark-mode {
+  color: #fff; /* Cor da fonte no modo escuro */
 }

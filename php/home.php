@@ -1,21 +1,30 @@
 <?php
 session_start();
-include('config.php');
+include 'config.php';
 if ((!isset($_SESSION['email']) == true) and (!isset($_SESSION['senha']) == true)) {
   unset($_SESSION['email']);
   unset($_SESSION['senha']);
-  header('location: login.php');
+  header('location: ../pages/home.html');
 }
 
-$stmt = $conexao->prepare("SELECT nm_user FROM usuarios WHERE id = ?");
-$stmt->bind_param("i", $id);
-$stmt->execute();
-$stmt->bind_result($nm_user);
-$stmt->fetch();
-$stmt->close();
-$conexao->close()
+$user_id = $_SESSION['user_id']; // assuming you store user_id in session
 
+$sql = "SELECT nm_user FROM usuarios WHERE id = ?";
+$stmt = $conexao->prepare($sql);
+$stmt->bind_param("i", $user_id);
+$stmt->execute();
+$result = $stmt->get_result();
+
+if ($result->num_rows > 0) {
+  $user = $result->fetch_assoc();
+  $user_name = $user['nm_user'];
+} else {
+  $user_name = "Usuário";
+}
+
+$stmt->close();
 ?>
+</html>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -55,9 +64,8 @@ $conexao->close()
   <div class="container">
     <a class="navbar-brand" href="home.php"><img class="logo" src="/img/ZooPet Logomarca.png" alt="">ZooPet</a>
 
-
-    <form class="form-inline">
-
+    <div>Bem-vindo, <?php echo $user_name; ?>!</div>
+    <form class="d-inline-flex">
       <div class="dropdown">
         <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gear" viewBox="0 0 16 16">
@@ -93,7 +101,6 @@ $conexao->close()
 
 <body>
   <br><br>
-  <h1>Bem-vindo, <?php echo($nm_user)?>!</h1>
   <br><br>
   <!--CONTEUDO-->
 
