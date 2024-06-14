@@ -43,7 +43,7 @@ $stmt->close();
   <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
   <meta name="generator" content="Hugo 0.118.2">
   <title>ZooPet</title>
-  <link rel="icon" href="/img/ZooPet Icone 2.png">
+  <link rel="icon" href="../img/ZooPet Icone 2.png">
 
   <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/blog/">
   <link rel="stylesheet" href="/pages/style.css">
@@ -52,7 +52,7 @@ $stmt->close();
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="/pages/cadastro.css">
+  <link rel="stylesheet" href="../pages/cadastro.css">
   <link rel="stylesheet" href="../css/nightmode.css">
   <style>
     .switch {
@@ -140,8 +140,10 @@ $stmt->close();
               <input class="form-check-input" type="checkbox" id="chk">
               <label class="form-check-label" for="chk">Modo Noturno</label>
             </div>
-          </li><a class="dropdown-item" href="../php/feed.php">FEED</a></li>
-          <li><hr class="dropdown-divider"></li>
+          </li><a class="dropdown-item" href="../php/feed/feed.php">FEED</a></li>
+          <li>
+            <hr class="dropdown-divider">
+          </li>
           <li><a class="dropdown-item" href="../pages/suporte.html">FAQ</a></li>
         </ul>
       </div>
