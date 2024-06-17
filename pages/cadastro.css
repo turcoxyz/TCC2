@@ -127,3 +127,10 @@ button:hover {
   border: 3px solid black;
   padding: 6px;
 }
+/*TAMANHO IMAGENS DO FEED DE PUB */
+.post-image {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  object-fit: cover;
+}

@@ -1,30 +1,70 @@
 <?php
-session_start();
-include 'config.php';
+if (isset($_POST['submit'])) {
+    include_once('config.php');
 
-if (!isset($_SESSION['email']) || !isset($_SESSION['senha'])) {
-  unset($_SESSION['email']);
-  unset($_SESSION['senha']);
-  header('Location: ../pages/home.html');
-  exit();
+    $nome = $_POST['Nome'];
+    $nomeUser = $_POST['nomeUser'];
+    $email = $_POST['email'];
+    $telefone = $_POST['telefone'];
+    $password = $_POST['password'];
+    $confirm_password = $_POST['confirm_password'];
+    $sexo = $_POST['genero'];
+    $dt_nascimento = $_POST['data_nascimento'];
+    $nm_bairro = $_POST['bairro'];
+    $endereco = $_POST['nm_rua'];
+
+    // Verificação de confirmação de senha
+    if ($password !== $confirm_password) {
+        echo "As senhas não coincidem.";
+        exit();
+    }
+
+    // Validação do formato do email
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        echo "Formato de email inválido.";
+        exit();
+    }
+
+    // Validação do tamanho da senha
+    if (strlen($password) < 8) {
+        echo "A senha deve ter pelo menos 8 caracteres.";
+        exit();
+    }
+
+    // Hash da senha
+    $hashed_password = password_hash($password, PASSWORD_BCRYPT);
+
+    // Converter o valor de sexo para sexo_id
+    $sexo_id = null;
+    $sexo_map = [
+        'masculino' => 1,
+        'feminino' => 2,
+        'outros' => 3
+    ];
+    if (array_key_exists($sexo, $sexo_map)) {
+        $sexo_id = $sexo_map[$sexo];
+    } else {
+        echo "Gênero inválido.";
+        exit();
+    }
+
+    // Prepara a consulta
+    $stmt = $conexao->prepare("INSERT INTO usuarios (nm_complete, nm_user, email, telefone, senha, sexo_id, dt_nascimento, nm_bairro, endereco) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param("sssssssss", $nome, $nomeUser, $email, $telefone, $hashed_password, $sexo_id, $dt_nascimento, $nm_bairro, $endereco);
+
+    // Executa a consulta
+    if ($stmt->execute()) {
+        header('Location: login.php');
+        exit();
+    } else {
+        echo "Erro: " . $stmt->error;
+    }
+
+    // Fecha a declaração
+    $stmt->close();
+    // Fecha a conexão
+    $conexao->close();
 }
-
-$user_id = $_SESSION['user_id']; // assumindo que você armazena user_id na sessão
-
-$sql = "SELECT nm_user FROM usuarios WHERE id = ?";
-$stmt = $conexao->prepare($sql);
-$stmt->bind_param("i", $user_id);
-$stmt->execute();
-$result = $stmt->get_result();
-
-if ($result->num_rows > 0) {
-  $user = $result->fetch_assoc();
-  $user_name = htmlspecialchars($user['nm_user']); // Sanitização para evitar XSS
-} else {
-  $user_name = "Usuário";
-}
-
-$stmt->close();
 ?>
 
 <!DOCTYPE html>
@@ -46,56 +86,16 @@ $stmt->close();
     <link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/pages/cadastro.css">
     <script>
-        function validateForm() {
-            var isValid = true;
-            var errors = {};
-
+        function validatePassword() {
             var password = document.getElementsByName('password')[0].value;
             var confirm_password = document.getElementsByName('confirm_password')[0].value;
             if (password !== confirm_password) {
-                errors['confirm_password'] = "As senhas não coincidem.";
-                isValid = false;
+                alert("As senhas não coincidem.");
+                return false;
             }
-
-            var email = document.getElementsByName('email')[0].value;
-            var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-            if (!emailPattern.test(email)) {
-                errors['email'] = "Formato de email inválido.";
-                isValid = false;
-            }
-
-            var telefone = document.getElementsByName('telefone')[0].value;
-            var telefonePattern = /^[0-9]{2}[0-9]{5}[0-9]{4}$/;
-            if (!telefonePattern.test(telefone)) {
-                errors['telefone'] = "Digite um telefone válido com 11 dígitos.";
-                isValid = false;
-            }
-
-            if (password.length < 8) {
-                errors['password'] = "A senha deve ter pelo menos 8 caracteres.";
-                isValid = false;
-            }
-
-            // Clear previous error messages
-            document.querySelectorAll('.error').forEach(el => el.textContent = '');
-
-            // Display error messages
-            for (var key in errors) {
-                var errorElement = document.getElementById(key + '_error');
-                if (errorElement) {
-                    errorElement.textContent = errors[key];
-                }
-            }
-
-            return isValid;
+            return true;
         }
     </script>
-    <style>
-        .error {
-            color: red;
-            font-size: 0.9em;
-        }
-    </style>
 </head>
 
 <body>
@@ -103,43 +103,37 @@ $stmt->close();
     <a href="home.php"><button class="btn-voltar">&hookleftarrow; Voltar</button></a>
     <br><br><br>
     <div class="box">
-        <form action="registro.php" method="POST" onsubmit="return validateForm()">
+        <form action="registro.php" method="POST" onsubmit="return validatePassword()">
             <legend><b>Cadastro de Usuario</b></legend>
             <br><br>
             <div class="inputbox">
                 <input type="text" name="Nome" class="InputUser" required>
                 <label for="Nome" class="labelInput">Nome Completo</label>
-                <div id="Nome_error" class="error"></div>
             </div>
             <br><br>
             <div class="inputbox">
                 <input type="text" name="nomeUser" class="InputUser" required>
                 <label for="nomeUser" class="labelInput">Nome de Usuario</label>
-                <div id="nomeUser_error" class="error"></div>
             </div>
             <br><br>
             <div class="inputbox">
                 <input type="email" name="email" class="InputUser" required>
                 <label for="email" class="labelInput">Email</label>
-                <div id="email_error" class="error"></div>
             </div>
             <br><br>
             <div class="inputbox">
                 <input type="tel" name="telefone" class="InputUser" required pattern="[0-9]{2}[0-9]{5}[0-9]{4}" title="Digite um telefone válido com 11 dígitos">
                 <label for="telefone" class="labelInput">(DDD)Telefone</label>
-                <div id="telefone_error" class="error"></div>
             </div>
             <br><br>
             <div class="inputbox">
                 <input type="password" name="password" class="InputUser" required minlength="8">
                 <label for="password" class="labelInput">Crie uma Senha</label>
-                <div id="password_error" class="error"></div>
             </div>
             <br><br>
             <div class="inputbox">
                 <input type="password" name="confirm_password" class="InputUser" required minlength="8">
                 <label for="confirm_password" class="labelInput">Confirme a Senha</label>
-                <div id="confirm_password_error" class="error"></div>
             </div>
             <br><br>
             <p>Gênero</p>
@@ -151,36 +145,23 @@ $stmt->close();
             <br>
             <input type="radio" name="genero" id="outros" value="outros" required>
             <label for="outros">Outros</label>
-            <div id="genero_error" class="error"></div>
             <br><br>
             <div class="inputbox">
                 <label for="data_nascimento"><b>Data de Nascimento</b></label>
                 <input type="date" name="data_nascimento" id="data_nascimento" required>
-                <div id="data_nascimento_error" class="error"></div>
             </div>
             <br><br>
             <div class="inputbox">
                 <input type="text" name="bairro" class="InputUser" required>
                 <label for="bairro" class="labelInput">Nome do Bairro</label>
-                <div id="bairro_error" class="error"></div>
             </div>
             <br><br>
             <div class="inputbox">
                 <input type="text" name="nm_rua" class="InputUser" required>
                 <label for="nm_rua" class="labelInput">Endereço com Número</label>
-                <div id="nm_rua_error" class="error"></div>
             </div>
             <br><br>
             <input type="submit" name="submit" id="submit">
-            <?php
-            if (!empty($errors)) {
-                echo '<div class="error">Erros encontrados:<br>';
-                foreach ($errors as $error) {
-                    echo $error . '<br>';
-                }
-                echo '</div>';
-            }
-            ?>
         </form>
     </div>
 </body>

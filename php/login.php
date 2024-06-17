@@ -96,7 +96,7 @@ $conexao->close();
                     <?php echo $error_message; ?>
                 </div>
             <?php endif; ?>
-            <input type="submit" name="submit" value="Enviar" class="enviar">
+            <input type="submit" name="submit" value="Entrar" class="enviar">
             <br><br>
             <form class="form-inline">
                 <a href="recuperarsenha.php"><button class="btn btn-light" type="button">Esqueceu sua senha?</button></a>
