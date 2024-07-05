@@ -1,3 +1,5 @@
+/* Cadastro.css */
+
 .box {
   position: relative;
   top: 50%;
@@ -10,11 +12,6 @@
   color: white;
   margin-top: 30%;
 }
-
-fieldset {
-  border: 3px solid #49745f;
-}
-
 legend {
   border: 1px solid #49745f;
   padding: 10px;
@@ -69,6 +66,7 @@ legend {
   cursor: pointer;
   border-radius: 10px;
 }
+
 #submit:hover {
   background-color: #69a789;
 }
@@ -79,8 +77,8 @@ legend {
   flex-wrap: wrap;
 }
 
-#form{
- background-color: rgba(0, 0, 0, 0.8); 
+#form {
+  background-color: rgba(0, 0, 0, 0.8);
   position: absolute;
   top: 50%;
   left: 50%;
@@ -88,12 +86,9 @@ legend {
   padding: 5%;
   border-radius: 15px;
   color: white;
-  margin-top: 10%
-
-  /* border: 1px solid #49745f;
-  border-radius: 15px;
-  padding: 100px; */
+  margin-top: 10%;
 }
+
 input {
   padding: 15px;
   border-radius: none;
@@ -110,11 +105,12 @@ input {
   color: white;
   font-size: 15px;
 }
+
 button:hover {
   background-color: #69a789;
 }
 
-.forget{
+.forget {
   background-color: rgba(0, 0, 0, 0);
   outline: none;
   border-radius: none;
@@ -123,14 +119,8 @@ button:hover {
 .btn-voltar {
   margin-top: 30px;
   background-color: #49745f;
+  color: white;
   border-radius: 10px;
   border: 3px solid black;
   padding: 6px;
-}
-/*TAMANHO IMAGENS DO FEED DE PUB */
-.post-image {
-  width: 100%;
-  max-width: 400px;
-  height: auto;
-  object-fit: cover;
 }

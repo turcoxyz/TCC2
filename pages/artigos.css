@@ -1,22 +1,26 @@
 .btn-voltar {
-    margin-top: 30px;
-    background-color: #49745f;
-    border-radius: 10px;
-    border: 3px solid black;
-    padding: 6px;
-  }
-  
-  .artigo-texto {
-    font-size: large;
-  }
+  margin-top: 30px;
+  background-color: #49745f;
+  border-radius: 10px;
+  border: 3px solid black;
+  padding: 6px;
+}
 
-  .conteudo-row {
-    display: flex;
-    flex-direction: row;
-  }
+.artigo-texto {
+  font-size: large;
+}
 
-  .imagem-conteudo-artigo {
-    height: fit-content; 
-    border-radius: 7px; 
-    transform: scale(90%); 
+.conteudo-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.imagem-conteudo-artigo {
+  height: fit-content;
+  border-radius: 7px;
+  transform: scale(90%);
+}
+
+.clr-inh {
+  color: inherit;
 }

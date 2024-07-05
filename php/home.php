@@ -25,17 +25,12 @@ if ($result->num_rows > 0) {
 $stmt->close();
 ?>
 
-</html>
-
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="pt-BR" data-bs-theme="auto">
 
 <head>
 
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ZOOPET SISTEMA</title>
-  <script src="/assets/js/color-modes.js"></script>
+  <!-- <script src="../assets/js/color-modes.js"></script> -->
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -46,106 +41,49 @@ $stmt->close();
   <link rel="icon" href="../img/ZooPet Icone 2.png">
 
   <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/blog/">
-  <link rel="stylesheet" href="/pages/style.css">
+  <link rel="stylesheet" href="../pages/style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="../pages/cadastro.css">
+  <link href="https://fonts.googleapis.com/cssn?family=Playfair&#43;Display:700,900&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/nightmode.css">
-  <style>
-    .switch {
-      position: relative;
-      display: inline-block;
-      width: 40px;
-      height: 20px;
-    }
-
-    .switch input {
-      opacity: 0;
-      width: 0;
-      height: 0;
-    }
-
-    .slider {
-      position: absolute;
-      cursor: pointer;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-color: #ccc;
-      -webkit-transition: .4s;
-      transition: .4s;
-      border-radius: 20px;
-    }
-
-    .slider:before {
-      position: absolute;
-      content: "";
-      height: 16px;
-      width: 16px;
-      left: 2px;
-      bottom: 2px;
-      background-color: white;
-      -webkit-transition: .4s;
-      transition: .4s;
-      border-radius: 50%;
-    }
-
-    input:checked+.slider {
-      background-color: #2196F3;
-    }
-
-    input:checked+.slider:before {
-      -webkit-transform: translateX(20px);
-      -ms-transform: translateX(20px);
-      transform: translateX(20px);
-    }
-
-    .slider.round {
-      border-radius: 20px;
-    }
-
-    .slider.round:before {
-      border-radius: 50%;
-    }
-  </style>
-
 </head>
 
-<nav class="navbar navbar-expand-lg navbar-light justify-content-between" style="background: #49745f;">
+<body>
+
+
+
+  <!-- NAVBAR ----------------- -->
+
+  <link rel="stylesheet" href="../css/navbar.css">
+
+  <nav class="navbar navbar-expand-lg navbar-light navfundo justify-content-between">
     <div class="container">
-      <a class="navbar-brand" href="home.php">
-        <img class="logo" src="../img/ZooPet Logomarca.png" alt="ZooPet Logo">
-        ZooPet
-      </a>
+      <a class="navbar-brand" href="home.php"><img class="logo" src="../img/ZooPet Logomarca.png" alt="">ZooPet</a>
 
-      <!-- Botão "Feed" -->
-      <a href="../php/feed/feed.php"><button class="btn btn-outline-light ml-2">Feed</button></a>
 
-      <!-- Botão de menu responsivo -->
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
-        aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+      <div class="botoes">
 
-      <!-- Itens da barra de navegação -->
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto align-items-center">
+        <a href="feed/feed.php" class="bot-page">Feed</a>
+        <a href="artigos.php" class="bot-page">Artigos</a>
+        <a href="suporte.php" class="bot-page">Suporte</a>
+
+      </div>
+
+
+      <div class="botoes">
+
+        <span class="text-white">Bem-vindo, <?php echo $user_name; ?>!</span>
+
+        <form class="d-inline-flex">
           <!-- Dropdown menu -->
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle text-white" href="#" id="settingsDropdown" role="button" data-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gear"
-                viewBox="0 0 16 16">
-                <path
-                  d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492M5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0" />
-                <path
-                  d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115z" />
+          <li class="nav dropdown">
+            <a class="nav-link dropdown-toggle text-white" href="#" id="settingsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gear" viewBox="0 0 16 16">
+                <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492M5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0" />
+                <path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115z" />
               </svg>
-              Configurações
+              <!-- Configurações -->
             </a>
             <div class="dropdown-menu dropdown-menu-dark" aria-labelledby="settingsDropdown">
               <a class="dropdown-item" href="../php/perfil.php">Gerenciar Conta</a>
@@ -156,32 +94,40 @@ $stmt->close();
                 </div>
               </div>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="../pages/suporte.html">FAQ</a>
+              <!-- <a class="dropdown-item" href="../pages/suporte.html">FAQ</a> -->
+              <a href="sair.php" class="nav-link text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"></path>
+                  <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"></path>
+                </svg> Sair
+              </a>
             </div>
           </li>
 
           <!-- Log out button -->
-          <li class="nav-item">
-            <a href="/php/sair.php" class="nav-link text-white">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right"
-                viewBox="0 0 16 16">
-                <path fill-rule="evenodd"
-                  d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"></path>
-                <path fill-rule="evenodd"
-                  d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"></path>
+          <li class="nav">
+            <!-- <a href="sair.php" class="nav-link text-white">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"></path>
+                <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"></path>
               </svg> Sair
-            </a>
+            </a> -->
           </li>
-        </ul>
+
+        </form>
       </div>
+
+
+
     </div>
   </nav>
 
-  <br><br>
-  <br><br>
+  <!-- FIM NAVBAR --------------------------------- -->
+
   <!--CONTEUDO-->
 
   <main class="topo container">
+
 
     <!-- TESTE CARROSSEL -->
 
@@ -193,7 +139,7 @@ $stmt->close();
       </div>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <a href="registro.php"><img class="anuncio" src="../img/slide-cadastro.png" class="d-block w-100" alt="..."></a>
+          <a href="https://www.mongagua.sp.gov.br/noticias/saude/unidade-de-vigilancia-de-zoonoses-realiza-acao-alusiva-a-semana-de-prevencao-a-febre-maculosa" target="_blank"><img style="object-fit: contain;" class="anuncio" src="../img/slide-1.png" class="d-block w-100" alt="..."></a>
         </div>
         <div class="carousel-item">
           <a href="https://mongagua.sp.gov.br/noticias/saude/equipes-da-uvz-realizam-orientacoes-sobre-leishmaniose-visceral" target="_blank"><img class="anuncio" src="../img/slide-2.png" class="d-block w-100" alt="..."></a>
@@ -257,23 +203,23 @@ $stmt->close();
           </div>
         </div>
       </div>
-
+      <!-- 
       <div class="row g-5">
         <div class="col-md-8">
-          <h3 class="pb-4 mb-4 fst-italic border-bottom">
+          <h3 class="pb-4 mb-4 fst-italic border-bottom"> -->
 
-          </h3>
+      <!-- </h3>
 
           <article class="blog-post">
             <h2 class="display-5  mb-1">Feed</h2>
             <p class="blog-post-meta"></p>
 
             <p>Feed para anúncio de adoções, reportagens de animais desaparecidos e animais encontrados.</p>
-            <hr>
+            <hr> -->
 
-            <!-- FEED .............................................................................. -->
+      <!-- FEED .............................................................................. -->
 
-            <link rel="stylesheet" href="../pages/feed.css">
+      <!-- <link rel="stylesheet" href="../pages/feed.css">
 
             <div>
               <div class="feed-post">
@@ -303,7 +249,7 @@ $stmt->close();
                       eles um lar amoroso, por favor, entre em contato o mais rápido possível.
                       Eles estão prontos para encontrar suas famílias para sempre! 🏡❤️ </span>
                     <br><br>
-                    <img id="content-image" data-enlargable src="/img/Five-cute-puppies-are-rescued-after-being-cruelly-bagged-up-and-thrown-into-ravine-2.jpg" alt="">
+                    <img id="content-image" data-enlargable src="../img/Five-cute-puppies-are-rescued-after-being-cruelly-bagged-up-and-thrown-into-ravine-2.jpg" alt="">
                   </div>
                 </div>
                 <div class="interaction">
@@ -355,16 +301,18 @@ $stmt->close();
                 </div>
                 <div class="interaction">
                   <div class="interaction-buttons">
-                    <img id="like-button" onclick="curtir()" src="/img/like0.png" alt="like">
+                    <img id="like-button" onclick="curtir()" src="../img/like0.png" alt="like">
                     <img id="share-button" src="../img/share.png" alt="compartilhar">
                   </div>
                   <div class="comentario-box"><input class="comentario-campo" placeholder="Comente aqui..." type="text"></div>
                 </div>
               </div>
             </div>
-            <!-- FEED .............................................................................. -->
 
-        </div>
+            <script src="feed.js"></script> -->
+      <!-- FEED .............................................................................. -->
+
+      <!-- </div>
 
         <div class="col-md-4">
           <div class="position-sticky" style="top: 2rem;">
@@ -380,9 +328,9 @@ $stmt->close();
               <h4 class="fst-italic">Publicaçoes Recentes</h4>
               <ul class="list-unstyled">
                 <li>
-                  <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="/pages/artigo1.html">
+                  <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="../pages/artigo1.html">
                     <img class="bd-placeholder-img" width="100%" height="96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
-                    <img src="/img/capa-art1.png" width="114px" height="96px" fill="#777" />
+                    <img src="../img/capa-art1.png" width="114px" height="96px" fill="#777" />
                     </svg>
                     <div class="col-lg-8">
                       <h6 class="mb-0">Comidas venenosas para cães e gatos</h6>
@@ -393,21 +341,36 @@ $stmt->close();
                 <li>
                   <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="artigo2.html">
                     <svg class="bd-placeholder-img" width="100%" height="96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
-                      <img src="/img/capa-art2.png" width="114px" height="96px" fill="#777" />
+                      <img src="../img/capa-art2.png" width="114px" height="96px" fill="#777" />
                     </svg>
                     <div class="col-lg-8">
                       <h6 class="mb-0">Doenças de animais de estimação</h6>
                       <small class="text-body-secondary">3 de Maio, 2024</small>
                     </div>
                   </a>
-                </li>
-              </ul>
-            </div>
-
-
-          </div>
-        </div>
+                </li> -->
+      <!-- <li>
+                                    <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top"
+                                        href="#">
+                                        <svg class="bd-placeholder-img" width="100%" height="96"
+                                            xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                                            preserveAspectRatio="xMidYMid slice" focusable="false">
+                                            <rect width="100%" height="100%" fill="#777" />
+                                        </svg>
+                                        <div class="col-lg-8">
+                                            <h6 class="mb-0">TEMP</h6>
+                                            <small class="text-body-secondary">January 13, 2023</small>
+                                        </div>
+                                    </a>
+                                </li> -->
+      </ul>
       </div>
+
+
+      </div>
+      </div>
+      </div>
+      
 
     </main>
 
@@ -418,15 +381,13 @@ $stmt->close();
       <p> Site desenvolvido pela equipe PrimeTech para o trabalho de conclusão de curso. </p>
     </footer>
 
-
 </body>
 <script src="../pages/feed.js"></script>
-<script src="../js/java.js"></script>
 <script src="js/bootstrap.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<script src="../js/nightmode.js"></script>
 
 </html>

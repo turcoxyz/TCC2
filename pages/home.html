@@ -1,10 +1,9 @@
-
 <!doctype html>
 <html lang="pt-BR" data-bs-theme="auto">
 
 <head>
-    
-<script src="/assets/js/color-modes.js"></script>
+
+    <script src="../assets/js/color-modes.js"></script>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,56 +11,71 @@
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.118.2">
     <title>ZooPet</title>
-    <link rel="icon" href="/img/ZooPet Icone 2.png">
-
+    <link rel="icon" href="../img/ZooPet Icone 2.png">
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/blog/">
-    <link rel="stylesheet" href="/pages/style.css">
+    <link rel="stylesheet" href="../pages/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap" rel="stylesheet">
-
+    <link rel="stylesheet" href="../css/nightmode.css">
+    
 </head>
 
 <body>
+
+     <!-- NAVBAR ----------------- -->
+
+	<link rel="stylesheet" href="../css/navbar.css">
+
     <nav class="navbar navbar-expand-lg navbar-light navfundo justify-content-between">
         <div class="container">
-            <a class="navbar-brand" href="home.html"><img class="logo" src="/img/ZooPet Logomarca.png" alt="">ZooPet</a>
-            
+            <a class="navbar-brand" href="home.html"><img class="logo" src="../img/ZooPet Logomarca.png"
+                    alt="">ZooPet</a>
 
-            <form class="d-inline-flex">
-                <a href="../php/login.php"><button class="btn btn-light m-70%" type="button">Entrar</button></a>
-                <a href="../php/registro.php"><button class="btn btn-outline-light" type="button">Registrar</button></a>
-                
-                  <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gear" viewBox="0 0 16 16">
-                        <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492M5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0" />
-                        <path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115z" />
-                      </svg>
-                    </button>
-                    <ul class="dropdown-menu dropdown-menu-dark">
-                      <li><a class="dropdown-item">Modo Noturno</a>
-                        <input type="checkbox" class="checkbox" id="chk" />
-                        <label class="label" for="chk">
-                          <i class="fas fa-moon"></i>
-                          <i class="fas fa-sun"></i>
-                          <div class="ball"></div>
-                        </label>
-                      </li>
-                      <li>
-                        <hr class="dropdown-divider">
-                      </li>
-                      <li><a class="dropdown-item" href="../suporte.html">FAQ</a></li>
-                    </ul>
-                  </div>
-                  
-                  
-              </form>
 
-        </div>
+            <div class="botoes">
+
+                <a href="artigos.html" class="bot-page">Artigos</a>
+                <a href="suporte.html" class="bot-page">Suporte</a>
+
+            </div>
+
+
+            <div class="botoes">
+                <form class="d-inline">
+                    <a href="../php/login.php">
+                        <button class="btn btn-light m-70%" type="button">Entrar</button>
+                    </a>
+                    <a href="../php/registro.php">
+                        <button class="btn btn-outline-light" type="button">Registrar</button>
+                    </a>
+                </form>
+                <li class="nav dropdown">
+                    <a class="nav-link dropdown-toggle text-white" href="#" id="settingsDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-gear" viewBox="0 0 16 16">
+                            <path
+                                d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492M5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0" />
+                            <path
+                                d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115z" />
+                        </svg>
+                        Configurações
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-dark" aria-labelledby="settingsDropdown">
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="chk">
+                            <label class="form-check-label" for="chk">Modo Noturno</label>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="../pages/suporte.html">FAQ</a>
+                    </div>
+                </li>
+            </div>
     </nav>
+    <!-- FIM NAVBAR --------------------------------- -->
 
     <!--CONTEUDO-->
 
@@ -81,16 +95,18 @@
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <a href="../php/registro.php"><img class="anuncio" src="/img/slide-cadastro.png" class="d-block w-100"
-                            alt="..."></a>
+                    <a href="../php/registro.php"><img class="anuncio" src="../img/slide-cadastro.png"
+                            style="object-fit: cover;" class="d-block w-100" alt="..."></a>
                 </div>
                 <div class="carousel-item">
                     <a href="https://mongagua.sp.gov.br/noticias/saude/equipes-da-uvz-realizam-orientacoes-sobre-leishmaniose-visceral"
-                        target="_blank"><img class="anuncio" src="/img/slide-2.png" class="d-block w-100" alt="..."></a>
+                        target="_blank"><img class="anuncio" src="../img/slide-2.png" class="d-block w-100"
+                            alt="..."></a>
                 </div>
                 <div class="carousel-item">
                     <a href="https://www.diariodolitoral.com.br/variedades/saude/mongagua-agenda-mais-uma-nebulizacao-contra-dengue-saiba-onde/180179/"
-                        target="_blank"><img class="anuncio" src="/img/slide-3.png" class="d-block w-100" alt="..."></a>
+                        target="_blank"><img class="anuncio" src="../img/slide-3.png" class="d-block w-100"
+                            alt="..."></a>
                 </div>
 
             </div>
@@ -129,7 +145,7 @@
                         <div class="col-auto d-none d-lg-block">
                             <img class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg"
                                 role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice"
-                                focusable="false" src="/img/PrimeTech Insta.png" style="object-fit: cover;">
+                                focusable="false" src="../img/PrimeTech Insta.png" style="object-fit: cover;">
 
                         </div>
                     </div>
@@ -151,7 +167,7 @@
                             </a>
                         </div>
                         <div class="col-auto d-none d-lg-block">
-                            <img src="/img/capa_artigo_zoonose.png" style="object-fit: contain;"
+                            <img src="../img/capa_artigo_zoonose.png" style="object-fit: contain;"
                                 class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg"
                                 role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice"
                                 focusable="false">
@@ -162,26 +178,23 @@
 
             <div class="row g-5">
                 <div class="col-md-8">
-                    <h3 class="pb-4 mb-4 fst-italic border-bottom">
-
-                    </h3>
-
+                    <!-- 
                     <article class="blog-post">
                         <h2 class="display-5  mb-1">Feed</h2>
                         <p class="blog-post-meta"></p>
 
                         <p>Feed para anúncio de adoções, reportagens de animais desaparecidos e animais encontrados.</p>
-                        <hr>
+                        <hr> -->
 
-                        <!-- FEED .............................................................................. -->
-
+                    <!-- FEED .............................................................................. -->
+                    <!-- 
                         <link rel="stylesheet" href="../pages/feed.css">
 
                         <div>
                             <div class="feed-post">
                                 <div class="user-info">
                                     <a href="" class=""><img class="profile-picture"
-                                            src="/img/PFPS/beautiful-woman-avatar-profile-icon-vector.png" alt=""></a>
+                                            src="../img/PFPS/beautiful-woman-avatar-profile-icon-vector.png" alt=""></a>
                                     <div class="column-content">
                                         <div class="row-content">
                                             <a href="#" class="nome-usuario">
@@ -207,14 +220,14 @@
                                             Eles estão prontos para encontrar suas famílias para sempre! 🏡❤️ </span>
                                         <br><br>
                                         <img id="content-image" data-enlargable
-                                            src="/img/Five-cute-puppies-are-rescued-after-being-cruelly-bagged-up-and-thrown-into-ravine-2.jpg"
+                                            src="../img/Five-cute-puppies-are-rescued-after-being-cruelly-bagged-up-and-thrown-into-ravine-2.jpg"
                                             alt="">
                                     </div>
                                 </div>
                                 <div class="interaction">
                                     <div class="interaction-buttons">
-                                        <img id="like-button" onclick="curtir()" src="/img/like0.png" alt="like">
-                                        <img id="share-button" src="/img/share.png" alt="compartilhar">
+                                        <img id="like-button" onclick="curtir()" src="../img/like0.png" alt="like">
+                                        <img id="share-button" src="../img/share.png" alt="compartilhar">
                                     </div>
                                     <div class="comentario-box"><input class="comentario-campo"
                                             placeholder="Comente aqui..." type="text"></div>
@@ -226,7 +239,8 @@
                             <div class="feed-post">
                                 <div class="user-info">
                                     <a href="" class=""><img class="profile-picture"
-                                            src="/img/PFPS/beautiful-latin-woman-avatar-character-icon-free-vector.png" alt=""></a>
+                                            src="../img/PFPS/beautiful-latin-woman-avatar-character-icon-free-vector.png"
+                                            alt=""></a>
                                     <div class="column-content">
                                         <div class="row-content">
                                             <a href="#" class="nome-usuario">
@@ -257,15 +271,13 @@
                                             importante. Compartilhem essa mensagem para nos ajudar a trazer o Simba de
                                             volta para casa. Muito obrigado pela sua ajuda! 🙏🐱❤️ </span>
                                         <br><br>
-                                        <img id="content-image" data-enlargable
-                                            src="/img/gatobranco.jpg"
-                                            alt="">
+                                        <img id="content-image" data-enlargable src="../img/gatobranco.jpg" alt="">
                                     </div>
                                 </div>
                                 <div class="interaction">
                                     <div class="interaction-buttons">
-                                        <img id="like-button" onclick="curtir()" src="/img/like0.png" alt="like">
-                                        <img id="share-button" src="/img/share.png" alt="compartilhar">
+                                        <img id="like-button" onclick="curtir()" src="../img/like0.png" alt="like">
+                                        <img id="share-button" src="../img/share.png" alt="compartilhar">
                                     </div>
                                     <div class="comentario-box"><input class="comentario-campo"
                                             placeholder="Comente aqui..." type="text"></div>
@@ -273,11 +285,11 @@
                             </div>
                         </div>
 
-                        <script src="feed.js"></script>
-                        <!-- FEED .............................................................................. -->
+                        <script src="feed.js"></script> -->
+                    <!-- FEED .............................................................................. -->
 
                 </div>
-
+                <!-- 
                 <div class="col-md-4">
                     <div class="position-sticky" style="top: 2rem;">
                         <div class="p-4 mb-3 bg-body-tertiary rounded">
@@ -293,11 +305,11 @@
                             <ul class="list-unstyled">
                                 <li>
                                     <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top"
-                                        href="/pages/artigo1.html">
+                                        href="../pages/artigo1.html">
                                         <img class="bd-placeholder-img" width="100%" height="96"
                                             xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
                                             preserveAspectRatio="xMidYMid slice" focusable="false">
-                                        <img src="/img/capa-art1.png" width="114px" height="96px" fill="#777" />
+                                        <img src="../img/capa-art1.png" width="114px" height="96px" fill="#777" />
                                         </svg>
                                         <div class="col-lg-8">
                                             <h6 class="mb-0">Comidas venenosas para cães e gatos</h6>
@@ -311,15 +323,15 @@
                                         <svg class="bd-placeholder-img" width="100%" height="96"
                                             xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
                                             preserveAspectRatio="xMidYMid slice" focusable="false">
-                                            <img src="/img/capa-art2.png" width="114px" height="96px" fill="#777" />
+                                            <img src="../img/capa-art2.png" width="114px" height="96px" fill="#777" />
                                         </svg>
                                         <div class="col-lg-8">
                                             <h6 class="mb-0">Doenças de animais de estimação</h6>
                                             <small class="text-body-secondary">3 de Maio, 2024</small>
                                         </div>
                                     </a>
-                                </li>
-                                <!-- <li>
+                                </li> -->
+                <!-- <li>
                                     <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top"
                                         href="#">
                                         <svg class="bd-placeholder-img" width="100%" height="96"
@@ -333,12 +345,12 @@
                                         </div>
                                     </a>
                                 </li> -->
-                            </ul>
-                        </div>
+                </ul>
+            </div>
 
 
-                    </div>
-                </div>
+            </div>
+            </div>
             </div>
 
         </main>
@@ -351,14 +363,14 @@
             <p> Site desenvolvido pela equipe PrimeTech para o trabalho de conclusão de curso. </p>
         </footer>
 
-
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-            crossorigin="anonymous"></script>
-
-        <script src="../java.js"></script>
-        <script src="../js/java.js"></script>
-        <link rel="stylesheet" href="../css/nightmode.css">
 </body>
+<script src="../pages/feed.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+<script src="../js/nightmode.js"></script>
 
 </html>
